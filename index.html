@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="SK Tax Solutions - Professional Tax Consultancy Services for Individuals, Businesses, Proprietorships, Partnerships and Companies. Income Tax, GST, Accounting, and Business Registration.">
+<meta name="description" content="SK Tax Solutions - Professional Tax Consultancy Services for Individuals, Businesses, Proprietorships, Partnerships and Companies. Income Tax, GST, Accounting, and[...]">
 <meta name="keywords" content="Tax Services, Income Tax, GST, Accounting, Business Registration, Tax Consultancy, Satara Maharashtra">
 <meta name="author" content="SK Tax Solutions">
 <meta name="robots" content="index, follow">
@@ -40,6 +40,38 @@ header {
   animation: slideDown 0.6s ease-out;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-container {
+  flex-shrink: 0;
+}
+
+.logo-container img {
+  height: 80px;
+  width: auto;
+  animation: slideIn 0.6s ease-out;
+}
+
+.header-text h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.header-text p {
+  font-size: 18px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -51,16 +83,15 @@ header {
   }
 }
 
-header h1 {
-  font-size: 40px;
-  margin-bottom: 5px;
-  letter-spacing: 1px;
-}
-
-header p {
-  font-size: 18px;
-  opacity: 0.95;
-  font-weight: 300;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 nav {
@@ -278,7 +309,8 @@ nav a:hover {
 .form-group input,
 .form-group textarea,
 .form-group select {
-  width: 100%;\n  padding: 12px;
+  width: 100%;
+  padding: 12px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.1);
@@ -372,7 +404,15 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  header h1 {
+  .header-content {
+    gap: 15px;
+  }
+
+  .logo-container img {
+    height: 60px;
+  }
+
+  .header-text h1 {
     font-size: 28px;
   }
 
@@ -402,8 +442,17 @@ footer p {
 }
 
 @media (max-width: 480px) {
-  header h1 {
-    font-size: 24px;
+  .header-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .logo-container img {
+    height: 50px;
+  }
+
+  .header-text h1 {
+    font-size: 22px;
   }
 
   .hero {
@@ -433,8 +482,43 @@ footer p {
 </nav>
 
 <header>
-  <h1>SK Tax Solutions</h1>
-  <p>Your Trusted Tax & Accounting Partner</p>
+  <div class="header-content">
+    <div class="logo-container">
+      <svg viewBox="0 0 200 200" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer circle -->
+        <circle cx="100" cy="100" r="95" fill="none" stroke="#28a745" stroke-width="3"/>
+        
+        <!-- SK Text -->
+        <text x="100" y="85" font-size="60" font-weight="bold" text-anchor="middle" fill="#003366" font-family="Arial, sans-serif">SK</text>
+        
+        <!-- Calculator icon -->
+        <rect x="35" y="110" width="30" height="35" fill="none" stroke="#003366" stroke-width="2" rx="2"/>
+        <line x1="40" y1="120" x2="60" y2="120" stroke="#003366" stroke-width="1.5"/>
+        <circle cx="45" cy="132" r="1.5" fill="#003366"/>
+        <circle cx="52" cy="132" r="1.5" fill="#003366"/>
+        <circle cx="45" cy="140" r="1.5" fill="#003366"/>
+        <circle cx="52" cy="140" r="1.5" fill="#003366"/>
+        
+        <!-- Document icon -->
+        <path d="M 70 125 L 70 145 L 85 145 L 85 125 Z" fill="none" stroke="#28a745" stroke-width="2"/>
+        <line x1="72" y1="130" x2="83" y2="130" stroke="#28a745" stroke-width="1.5"/>
+        <line x1="72" y1="135" x2="83" y2="135" stroke="#28a745" stroke-width="1.5"/>
+        <line x1="72" y1="140" x2="83" y2="140" stroke="#28a745" stroke-width="1.5"/>
+        
+        <!-- Bar chart -->
+        <rect x="95" y="138" width="6" height="8" fill="#003366"/>
+        <rect x="104" y="130" width="6" height="16" fill="#003366"/>
+        <rect x="113" y="122" width="6" height="24" fill="#003366"/>
+        
+        <!-- Up arrow -->
+        <path d="M 135 155 L 135 130 L 145 130 L 132 115 L 120 130 L 130 130 L 130 155" fill="#28a745" stroke="#28a745" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>SK Tax Solutions</h1>
+      <p>Your Trusted Tax & Accounting Partner</p>
+    </div>
+  </div>
 </header>
 
 <section class="hero">
